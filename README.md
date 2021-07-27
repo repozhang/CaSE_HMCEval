@@ -7,7 +7,8 @@ Code of MCE is based on the ConfidNet by Charles Corbiere.
 name="ConfidNet", version='0.1.0'.
 
 ### Data:
-Get the data from [LINK OF MDRDC](https://github.com/repozhang/malevolent_dialogue).
+We only provide sample data.
+For full data, please find from [LINK OF MDRDC](https://github.com/repozhang/malevolent_dialogue).
 Put the data into the data file: /.../module_1_MCE/confidnet/data/text/
 
 ### BERT pretrained file:
