@@ -91,7 +91,10 @@ MIP: https://www.python-mip.com (Túlio A. M. Toffolo, Haroldo G. Santos).
 # Please refer to our paper:
 @article{zhanghuman,
   title={A Human-machine Collaborative Framework for Evaluating Malevolence in Dialogues},
-  author={Zhang, Yangjun and Ren, Pengjie and de Rijke, Maarten and Delhaize, Ahold}
-  journal={ACL}
-  year={2021}
+  author={Zhang, Yangjun and Ren, Pengjie and de Rijke, Maarten and Delhaize, Ahold},
+  journal={ACL},
+  year={2021},
 }
+
+
+

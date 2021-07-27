@@ -1,0 +1,1 @@
+python -u test.py -c /.../confidnet/output/text_baseline_pretrained/config_1.yaml -e 004 -m trust_score

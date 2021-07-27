@@ -1,0 +1,1 @@
+python -u test.py -c /.../confidnet/output/text_selfconfid/config_1.yaml -e 007 -m confidnet

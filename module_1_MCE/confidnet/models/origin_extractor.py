@@ -1,0 +1,37 @@
+import torch.nn as nn
+import torch.nn.functional as F
+from torchsummary import summary
+from pytorch_pretrained_bert.modeling import BertModel, BertPreTrainedModel
+
+from confidnet.utils.logger import get_logger
+LOGGER = get_logger(__name__, level="DEBUG")
+
+
+
+class ORIGINExtractor(BertPreTrainedModel):
+    def __init__(self,config, config_args):
+        super().__init__(config, config_args)
+
+        self.num_labels = config_args['data']['num_classes']
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)  # 0.1
+        self.classifier = nn.Linear(config.hidden_size, self.num_labels)
+        self.apply(self.init_bert_weights)
+
+    def forward(self,input_ids, attention_mask=None, token_type_ids=None, labels=None):
+        outputs = self.bert(
+            input_ids,
+            attention_mask=attention_mask,
+            token_type_ids=token_type_ids
+        )
+
+        pooled_output = outputs[1] # [cls] token, pooled_output
+        out = self.dropout(pooled_output)
+        out = F.relu(out)
+
+        return out
+
+    def print_summary(self, input_size):
+        summary(self, input_size)
+
+

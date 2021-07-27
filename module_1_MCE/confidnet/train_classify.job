@@ -1,0 +1,1 @@
+python -u train.py -c confs/exp_text_server.yaml

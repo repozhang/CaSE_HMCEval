@@ -1,0 +1,42 @@
+# Data parameters
+data:
+    dataset: mdrdc
+    data_dir: data/text
+    num_classes: 2
+    max_len: 128
+    label_list: ['0', '1']
+    bert_vocab_file: /.../confidnet/data/bertfiles/bert-base-uncased-vocab.txt
+    bert_model_dir: /.../confidnet/data/bertfiles/bert-base-uncased
+
+# Training parameters
+training:
+    output_folder: /.../confidnet/output/text_baseline_pretrained/
+    task: classification
+    learner: default
+    nb_epochs: 4
+    batch_size_train: 64
+    batch_size_dev: 8
+    batch_size_test: 32
+    loss:
+        name: cross_entropy
+    optimizer:
+        name: bertadam
+        lr: 0.00005
+        warmup_proportion: 0.1
+    gradient_accumulation_steps: 8
+#    metrics: ['accuracy', 'auc', 'ap_success', 'ap_errors']
+    metrics: ['accuracy']
+    pin_memory: False
+    num_workers: 4
+
+
+
+# Model parameters
+model:
+    name: origin
+    resume:
+    hidden_size: 768
+    is_dropout: False
+
+
+
