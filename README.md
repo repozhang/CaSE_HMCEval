@@ -69,7 +69,7 @@ Then, run:
     ` python ilp.py` 
 
 # Requirements
-### Pytorch version: 3.7
+### Python version: 3.7
 ### Dependency:
 Tensorflow 2.0 (for tensorboard, saving model file etc.),
 pandas,
